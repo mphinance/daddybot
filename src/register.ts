@@ -6,6 +6,7 @@
  * propagate). Run with `npm run register`.
  */
 
+import './env.js';
 import { REST, Routes } from 'discord.js';
 import { getDiscordConfig } from './config.js';
 import { definitions } from './commands.js';

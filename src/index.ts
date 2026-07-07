@@ -6,6 +6,7 @@
  * slash-command + channel-post bot needs.
  */
 
+import './env.js';
 import { Client, Events, GatewayIntentBits, MessageFlags } from 'discord.js';
 import { getDiscordConfig } from './config.js';
 import { MOCK_MODE } from './data.js';
