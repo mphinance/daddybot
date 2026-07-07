@@ -1,0 +1,27 @@
+{
+  "name": "daddybot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Self-hostable Discord bot that posts TraderDaddy Pro smart-money options-flow alerts to your own server.",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "register": "tsx src/register.ts",
+    "smoke": "tsx src/smoke.ts"
+  },
+  "dependencies": {
+    "@traderdaddy/sdk": "file:../traderdaddy-sdk",
+    "discord.js": "^14.16.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
