@@ -44,8 +44,14 @@ async function pollOnce(client: Client, cfg: AlertConfig, seen: Set<string>): Pr
   for (const row of data) {
     if (seen.has(row.id)) continue;
     if (!cfg.minTiers.has(row.tier.toUpperCase())) continue;
-    remember(seen, row.id);
-    await channel.send({ embeds: [alertEmbed(row, MOCK_MODE)] });
+    try {
+      await channel.send({ embeds: [alertEmbed(row, MOCK_MODE)] });
+      // Only remember prints we actually delivered — a failed send retries next tick.
+      remember(seen, row.id);
+    } catch (err) {
+      // One bad send (perms, transient) shouldn't abort the rest of the batch.
+      console.error(`[alerts] failed to post ${row.id}:`, err);
+    }
   }
 }
 
