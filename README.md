@@ -10,6 +10,9 @@ in demo mode out of the box; add your own `td_live_` key to go live.
 Part of the [TraderDaddy Pro](https://traderdaddy.pro) open-source family, alongside
 [DaddyBoard](https://github.com/mphinance/daddyboard) (the reference SDK consumer).
 
+**Customizing it?** Grab a prompt from [`PROMPTS.md`](PROMPTS.md) and paste it into
+Claude Code / Cursor. Agents working in this repo should read [`CLAUDE.md`](CLAUDE.md).
+
 ---
 
 ## Why this exists
